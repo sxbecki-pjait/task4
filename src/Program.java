@@ -3,14 +3,14 @@ public class Program {
         MusicLibrary musicLibrary = new MusicLibrary("Car Music");
         musicLibrary.createPlaylist("Favourites");
         musicLibrary.createPlaylist("Classical Music");
-        musicLibrary.addTrackToPlaylist("Majteczki w kropeczki - Masno Gang", "Favourites");
-        musicLibrary.addTrackToPlaylist("Rose Moet - Malik Montana", "Favourites");
-        musicLibrary.addTrackToPlaylist("No to cyk - Diho", "Classical Music");
-        musicLibrary.addTrackToPlaylist("Robilas to najlepiej - Diho", "Classical Music");
-        musicLibrary.addTrackToPlaylist("Antonio Banderas - Diho", "Classical Music");
+        musicLibrary.addTrackToPlaylist("David Guetta - Memories", "Classical Music");
+        musicLibrary.addTrackToPlaylist("Frank Sinatra - Let It Snow", "Classical Music");
+        musicLibrary.addTrackToPlaylist("Intro - TACONAFIDE", "Favourites");
+        musicLibrary.addTrackToPlaylist("Trip  - Quebonafide", "Favourites");
+        musicLibrary.addTrackToPlaylist("Antonio Banderas - Diho", "Favourites");
         musicLibrary.displayAllPlaylists();
-        musicLibrary.removeTrackFromPlaylist("No to cyk - Diho", "Classical Music");
+        musicLibrary.removeTrackFromPlaylist("Antonio Banderas - Diho", "Favourites");
         musicLibrary.displayAllPlaylists();
-        musicLibrary.searchForPhraseInPlaylists("Diho");
+        musicLibrary.searchForPhraseInPlaylists("Memories");
     }
 }
