@@ -11,6 +11,6 @@ public class Program {
         musicLibrary.displayAllPlaylists();
         musicLibrary.removeTrackFromPlaylist("Antonio Banderas - Diho", "Favourites");
         musicLibrary.displayAllPlaylists();
-        musicLibrary.searchForPhraseInPlaylists("Memories");
+        musicLibrary.searchForPhraseInPlaylists("Memorie");
     }
 }
