@@ -17,7 +17,6 @@ public class MusicLibrary {
     }
 
     public void addTrackToPlaylist(String track, String playlistsName) {
-        addTrack(track);
         for (Playlist playlist : playlists) {
             if (playlist.getName().equals(playlistsName)) {
                 if(!playlist.getTracks().contains(track)) {
@@ -36,7 +35,9 @@ public class MusicLibrary {
         try{
             playlist.removeTrack(track);
             removeTrack(track);
-            System.out.println("Track is removed from the playlist!");
+            System.out.println("======================================");
+            System.out.println(track + " removed from the playlist!");
+            System.out.println("======================================");
         }
         catch(Exception e){
             System.out.println("Track was not in the playlist!");
@@ -46,11 +47,12 @@ public class MusicLibrary {
     public void displayAllPlaylists() {
         System.out.println();
         System.out.println("Playlists:");
+        System.out.println();
         for (Playlist playlist : playlists) {
-            playlist.displayTracks();
-            if (playlist.getTracks().isEmpty()) {
-                System.out.println("    No tracks found!");
+            if(playlist.getName().equals("All Songs")){
+                continue;
             }
+            displayPlaylist(playlist.getName());
         }
 
     }
@@ -66,19 +68,15 @@ public class MusicLibrary {
 
     public void searchForPhraseInPlaylists(String phrase) {
         System.out.println();
-        System.out.println("Searching for \"" + phrase + "\" in playlists...");
-        for (Playlist playlist : playlists) {
-            List<String> matchingTracks = playlist.searchTracks(phrase);
-            if (matchingTracks != null){
-                for(String matchingTrack : matchingTracks){
-                    System.out.println("    -" + matchingTrack);
-                }
+        System.out.println("Searching for \"" + phrase + "\" in database...");
+        for(String track : playlists.get(0).getTracks()) {
+            if(track.toLowerCase().contains(phrase.toLowerCase())) {
+                System.out.println("    -" + track);
             }
         }
     }
 
     public void displayPlaylist(String playlistName) {
-        System.out.println();
         Playlist playlist = findPlaylist(playlistName);
         playlist.displayTracks();
         if (playlist.getTracks().isEmpty()) {
